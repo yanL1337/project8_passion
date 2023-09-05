@@ -271,10 +271,6 @@ h1 {
 
 /* - Portfolio image gallery */
 
-/* .image-gallery {
-  height: 100vh;
-} */
-
 .image-wrapper {
   display: flex;
   justify-content: space-between;
@@ -319,11 +315,23 @@ h1 {
   width: 20vw;
   height: 50vh;
   padding: 30px 30px;
+
   /* max-width: 40%; */
 }
 
 .image-gallery {
   color: #fff;
+}
+
+.hov-big,
+.hov-small {
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+}
+
+.hov-big:hover,
+.hov-small:hover {
+  opacity: 1;
 }
 
 .image-gallery h3 {
@@ -371,56 +379,54 @@ h1 {
 
 .service-content {
   text-align: center;
+  position: relative;
 }
 
-.content-text h2 {
+.wrapper h2 {
   color: #fff;
   font-size: 12rem;
   font-weight: 400;
 }
 
-.content-text p {
+.wrapper p {
   color: #999;
   font-size: 1.6rem;
 }
 
-/* - changing images service section */
+/* - fancy hover effekte */
 
-.chang-img1-style {
+/* ! mal schauen */
+
+.wrapper img {
+  display: none;
+}
+
+.service-content h2:hover {
+  color: #e8bf96;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.wrapper:hover img {
+  display: block;
+}
+
+.big-left {
   width: 15vw;
   height: 45vh;
   margin-top: 20vh;
+  position: absolute;
+  left: 0;
+  bottom: 10vh;
 }
 
-.chang-img2-style {
+.small-right {
   width: 10vw;
   height: 30vh;
   margin-bottom: 60vh;
-}
-
-/* 20 & 13, 15 & 22, 21 & 20 */
-.chang-img1 {
-  background: url("../Images/17.jpeg") no-repeat center;
-  background-size: cover;
-}
-
-.chang-img2 {
-  background: url("../Images/16.jpeg") no-repeat center;
-  background-size: cover;
-}
-
-/* .styler {
   position: absolute;
-} */
-
-/* - fancy hover effekte */
-
-.first:hover,
-.second:hover,
-.third:hover,
-.fourth:hover {
-  color: #e8bf96;
-  cursor: pointer;
+  top: 0;
+  right: 0;
 }
 
 /* - My Blog (Styling wie portfolio)*/
@@ -624,7 +630,6 @@ form {
 }
 
 form input[type="email"] {
-  /* appearance: none; */
   border: none;
   border-bottom: 1px solid #3f3a36;
   padding-bottom: 5px;
@@ -640,4 +645,48 @@ form a {
   padding: 10px 45px;
   font-size: 1.5rem;
   font-family: Inter;
+}
+
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 32.5%;
+  }
+  .page-wrapper {
+    margin: 0 100px;
+  }
+  .wrapper:hover img {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  /* html {
+    font-size: 15.5%;
+  } */
+
+  h1 {
+    font-size: 10rem;
+  }
+  .image-wrapper {
+    justify-content: space-around;
+    align-items: center;
+  }
+  .big-style {
+    height: 45vw;
+  }
+
+  .small-style {
+    height: 20vh;
+  }
+
+  .page-wrapper {
+    margin: 0 20px;
+  }
+  .wrapper:hover img {
+    display: none;
+  }
+
+  .linie {
+    width: 100px;
+  }
 }
